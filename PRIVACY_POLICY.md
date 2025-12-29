@@ -45,9 +45,8 @@ The App is not intended for children under 13. We do not knowingly collect data 
 We may update this Privacy Policy from time to time. Changes will be posted in the App and on our GitHub repository.
 
 ## 8. Contact Us
-If you have questions or concerns about this Privacy Policy, please contact us at: [your-email@example.com]
+If you have questions or concerns about this Privacy Policy, please contact us at: [expirymate,support@gmail.com]
 
 ---
 
-_You can always find the latest version of this policy at:_
-https://github.com/iamitpatole/expirymate/blob/master/PRIVACY_POLICY.md
+
