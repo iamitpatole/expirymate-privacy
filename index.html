@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ExpiryMate helps you track expiry dates for food, medicines, documents, warranties, and household items with smart reminders and secure backup." />
+  <title>ExpiryMate | Never Miss What Matters</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg-1: #fdf8ef;
+      --bg-2: #f4f7ff;
+      --ink: #202025;
+      --muted: #5d6470;
+      --brand: #ff6a2a;
+      --brand-2: #0ea5a3;
+      --card: rgba(255, 255, 255, 0.78);
+      --line: rgba(32, 32, 37, 0.09);
+      --shadow: 0 20px 45px rgba(27, 39, 66, 0.12);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 15%, rgba(255, 106, 42, 0.18), transparent 45%),
+        radial-gradient(circle at 85% 18%, rgba(14, 165, 163, 0.17), transparent 44%),
+        linear-gradient(135deg, var(--bg-1), var(--bg-2));
+      min-height: 100vh;
+    }
+
+    .page {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      padding: 40px 0 56px;
+    }
+
+    .hero {
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 8px);
+      background: linear-gradient(140deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+      backdrop-filter: blur(8px);
+      padding: clamp(26px, 4vw, 46px);
+      box-shadow: var(--shadow);
+      animation: rise 0.8s ease-out both;
+    }
+
+    .badge {
+      display: inline-block;
+      font-family: "Sora", sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 12px;
+      background: rgba(255, 106, 42, 0.12);
+      color: #bf4800;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: clamp(1.95rem, 5vw, 3.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+      max-width: 14ch;
+    }
+
+    .sub {
+      margin: 16px 0 0;
+      max-width: 60ch;
+      font-size: clamp(1rem, 1.9vw, 1.18rem);
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .highlights {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      color: #2a2f39;
+    }
+
+    .feature-grid {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--card);
+      backdrop-filter: blur(6px);
+      padding: 18px 18px 16px;
+      box-shadow: 0 10px 30px rgba(27, 39, 66, 0.08);
+      animation: rise 0.8s ease-out both;
+    }
+
+    .card:nth-child(2) { animation-delay: 0.08s; }
+    .card:nth-child(3) { animation-delay: 0.16s; }
+    .card:nth-child(4) { animation-delay: 0.24s; }
+    .card:nth-child(5) { animation-delay: 0.32s; grid-column: span 2; }
+
+    .card h2 {
+      margin: 0;
+      font-family: "Sora", sans-serif;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
+    }
+
+    .card ul {
+      margin: 12px 0 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .card li {
+      margin: 8px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .card li::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: linear-gradient(160deg, var(--brand), var(--brand-2));
+    }
+
+    .cta {
+      margin-top: 24px;
+      border: 1px solid rgba(14, 165, 163, 0.25);
+      background: linear-gradient(120deg, rgba(14, 165, 163, 0.15), rgba(255, 106, 42, 0.1));
+      border-radius: var(--radius);
+      padding: 18px;
+      font-size: 1rem;
+      color: #223242;
+    }
+
+    .footer {
+      margin-top: 20px;
+      color: #6c7380;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @keyframes rise {
+      from {
+        transform: translateY(12px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 860px) {
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card:nth-child(5) {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <span class="badge">ExpiryMate App</span>
+      <h1>Track expiry dates and never miss what matters.</h1>
+      <p class="sub">
+        ExpiryMate is your all-in-one solution to manage expiry dates for food, medicines, documents, warranties, and household items so life stays organized, safe, and stress-free.
+      </p>
+      <div class="highlights" aria-label="App benefits">
+        <span class="pill">Stay organized</span>
+        <span class="pill">Save money</span>
+        <span class="pill">Reduce waste</span>
+        <span class="pill">Worry less</span>
+      </div>
+    </section>
+
+    <section class="feature-grid" aria-label="Key features">
+      <article class="card">
+        <h2>Item Management Made Easy</h2>
+        <ul>
+          <li>Add new items with expiry dates</li>
+          <li>Edit items anytime when details change</li>
+          <li>Delete items you no longer need</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Group & Category Support</h2>
+        <ul>
+          <li>Create groups like Kitchen, Medicines, Office, and Family</li>
+          <li>Add items to groups for better organization</li>
+          <li>Manage multiple items effortlessly in one place</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Smart Expiry Reminders</h2>
+        <ul>
+          <li>Get timely notifications before items expire</li>
+          <li>Choose your preferred reminder time</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Clear Expiry Overview</h2>
+        <ul>
+          <li>View expired items at a glance</li>
+          <li>Access complete expiry history</li>
+          <li>Reduce waste and avoid unnecessary purchases</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2>Secure Backup & Restore</h2>
+        <ul>
+          <li>Create secure backups</li>
+          <li>Restore your data anytime</li>
+          <li>Access your information anytime, anywhere</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta">
+      Whether it is everyday essentials or important documents, ExpiryMate helps you stay prepared and in control.
+    </section>
+
+    <p class="footer">Built for Android users who want smarter expiry tracking.</p>
+  </main>
+</body>
+</html>
